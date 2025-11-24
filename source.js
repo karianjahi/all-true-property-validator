@@ -31,24 +31,74 @@ User Stories:
 
 */
 
-
 const truthCheck = (anArrayOfObjects, propertyName) => {
-    return anArrayOfObjects.every(obj => obj[propertyName] !== "");
-    
-}
+  let propertyArray = anArrayOfObjects.map((obj) => obj[propertyName]);
+  for (let item of propertyArray) if (!item) return false;
+  return true;
+};
 
-myObjs = [{
-    name: "Quincy",
-    role: "Founder",
-    isBot: false
-}, {
-    name: "Naomi",
-    role: "",
-    isBot: false
-}, {
-    name: "Camperbot",
-    role: "Bot",
-    isBot: true
-}]
 
-console.log(truthCheck(myObjs, "role"));
+// Tests
+let myObjs = [
+  { name: "Quincy", role: "Founder", isBot: false },
+  { name: "Naomi", role: "", isBot: false },
+  { name: "Camperbot", role: "Bot", isBot: true },
+];
+console.log(truthCheck(myObjs, "isBot")); // should return false
+
+myObjs = [
+  { name: "Quincy", role: "Founder", isBot: false },
+  { name: "Naomi", role: "", isBot: false },
+  { name: "Camperbot", role: "Bot", isBot: true },
+];
+console.log(truthCheck(myObjs, "name")); // should return true
+
+
+myObjs = [
+  { name: "Quincy", role: "Founder", isBot: false },
+  { name: "Naomi", role: "", isBot: false },
+  { name: "Camperbot", role: "Bot", isBot: true },
+];
+console.log(truthCheck(myObjs, "role")); // should return false
+
+myObjs = [
+  { name: "Pikachu", number: 25, caught: 3 },
+  { name: "Togepi", number: 175, caught: 1 },
+];
+console.log(truthCheck(myObjs, "number")); // should return true
+
+myObjs = [
+  { name: "Pikachu", number: 25, caught: 3 },
+  { name: "Togepi", number: 175, caught: 1 },
+  { name: "MissingNo", number: NaN, caught: 0 },
+];
+console.log(truthCheck(myObjs, "caught")); // should return false
+console.log(truthCheck(myObjs, "number")); // should return false
+
+myObjs = [
+  { name: "Quincy", username: "QuincyLarson" },
+  { name: "Naomi", username: "nhcarrigan" },
+  { name: "Camperbot" },
+];
+console.log(truthCheck(myObjs, "username")); // should return false
+
+
+myObjs = [
+  { name: "freeCodeCamp", users: [{ name: "Quincy" }, { name: "Naomi" }] },
+  { name: "Code Radio", users: [{ name: "Camperbot" }] },
+  { name: "", users: [] },
+];
+console.log(truthCheck(myObjs, "users")); // should return true
+
+myObjs = [
+  { id: 1, data: { url: "https://freecodecamp.org", name: "freeCodeCamp" } },
+  {
+    id: 2,
+    data: { url: "https://coderadio.freecodecamp.org/", name: "CodeRadio" },
+  },
+  { id: null, data: {} },
+];
+console.log(truthCheck(myObjs, "data")); // should return true
+console.log(truthCheck(myObjs, "id")); // should return false
+
+
