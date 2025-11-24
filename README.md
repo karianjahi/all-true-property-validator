@@ -76,7 +76,7 @@ This is especially useful for:
 - Detecting missing or invalid values
 
 ## 🎓 Educational Value
-This project is commonly based on an exercise from `**freeCodeCamp**` — designed to build confidence in:
+This project is commonly based on an exercise from **`freeCodeCamp`** — designed to build confidence in:
 
 - Logical operators
 
