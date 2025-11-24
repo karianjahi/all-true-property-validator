@@ -33,7 +33,8 @@ User Stories:
 
 
 const truthCheck = (anArrayOfObjects, propertyName) => {
-
+    return anArrayOfObjects.every(obj => obj[propertyName] !== "");
+    
 }
 
 myObjs = [{
@@ -50,4 +51,4 @@ myObjs = [{
     isBot: true
 }]
 
-console.log(truthCheck(myObjs, "name"));
+console.log(truthCheck(myObjs, "role"));
