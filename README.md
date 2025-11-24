@@ -19,7 +19,7 @@ This project demonstrates a foundational concept in JavaScript and frontend engi
 
 ## 🧠 What This Project Teaches You
 
-### ### 1. **Truthiness in JavaScript**
+### 1. **Truthiness in JavaScript**
 JavaScript evaluates values in boolean contexts using the concepts of **truthy** and **falsy**. This project reinforces understanding of:
 
 - Truthy values (e.g. `"hello"`, `1`, `{}`, `[]`, non-empty strings)
