@@ -31,3 +31,6 @@ User Stories:
 
 */
 
+const truthCheck = (anArrayOfObjects, propertyName) => {
+    
+}
